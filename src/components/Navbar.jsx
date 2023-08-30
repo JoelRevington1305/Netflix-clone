@@ -17,9 +17,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
+    <div className="flex items-center justify-between p-4 z-[100] w-full fixed h-20">
       <Link to="/">
-        <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
+        <h1 className="text-red-600 tracking-widest text-4xl font-bold cursor-pointer">
           NETFLIX
         </h1>
       </Link>
@@ -27,12 +27,12 @@ const Navbar = () => {
         <div className="flex flex-row justify-between">
           <Link to="/account">
             <button className="text-white pr-4">
-              <img className="w-10 h-10" src={avatar} alt="Account" />
+              <img className="w-10 h-10 rounded-full" src={avatar} alt="Account" />
             </button>
           </Link>
           <button
             onClick={handleLogout}
-            className="bg-red-600 px-6 py-2 h-[50%] rounded cursor-pointer text-white"
+            className="bg-red-600 px-6 py-2 h-[50%] rounded-full cursor-pointer text-white"
           >
             Logout
           </button>

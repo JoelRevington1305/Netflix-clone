@@ -8,3 +8,20 @@ body {
   background-color: black;
   font-family: Lato;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #e5dcd5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 50vh;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e5cdb9;
+  border-radius: 50vh;
+}
