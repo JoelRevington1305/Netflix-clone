@@ -49,12 +49,12 @@ const Row = ({ rowId, title, fetchURL }) => {
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
+      <h2 className="text-white font-bold md:text-3xl w-[90%] m-auto p-4">{title}</h2>
       <div className="relative flex items-center group">
         <MdChevronLeft
           onClick={slideLeft}
-          size={40}
-          className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
+          size={32}
+          className="bg-white left-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
         />
         <div
           id={"slider" + rowId}
@@ -67,8 +67,8 @@ const Row = ({ rowId, title, fetchURL }) => {
 
         <MdChevronRight
           onClick={slideRight}
-          size={40}
-          className="bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
+          size={32}
+          className="bg-white right-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
         />
       </div>
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}

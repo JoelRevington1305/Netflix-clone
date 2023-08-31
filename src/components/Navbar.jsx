@@ -1,12 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import avatar from "../images/Netflix-avatar.png";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll);
+    // };
+  }, []);
   const handleLogout = async () => {
     try {
       await logOut();
@@ -17,7 +28,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 z-[100] w-full fixed h-20">
+    <div className="flex items-center justify-between p-4 z-[100] w-full fixed h-20"
+      style={{backgroundColor: isScrolled ? '#0B0E15' : 'transparent'}}
+    >
       <Link to="/">
         <h1 className="text-red-600 tracking-widest text-4xl font-bold cursor-pointer">
           NETFLIX
